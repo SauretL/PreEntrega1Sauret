@@ -1,30 +1,34 @@
 [
     {
         "id": 1,
-        "nombre": "HG Gundam RX-78-2",
+        "nombre": "HG Gundam",
         "precio": 40000,
-        "stock": 10,
-        "description": "Model kit del Gundam original"
+        "stock": 15,
+        "description": "Gundam de la serie original en HG",
+        "categoria": "HG"
     },
     {
         "id": 2,
-        "nombre": "HG Gyan YMS-15 ",
-        "precio": 47000,
-        "stock": 1,
-        "description": "Model kit del Gyan"
+        "nombre": "HG Zaku",
+        "precio": 46000,
+        "stock": 7,
+        "description": "Gundam de la serie original en HG",
+        "categoria": "HG"
     },
     {
         "id": 3,
-        "nombre": "HG Gouf MS-07B",
-        "precio": 47000,
-        "stock": 3,
-        "description": "Model kit del Gouf de la serie original"
+        "nombre": "MG Gundam",
+        "precio": 120000,
+        "stock": 2,
+        "description": "Gundam de la serie original en MG",
+        "categoria": "MG"
     },
     {
         "id": 4,
-        "nombre": "Char's Zaku MS-06S",
-        "precio": 42000,
-        "stock": 7,
-        "description": "Model kit del Zaku del Cometa Rojo"
+        "nombre": "RG Gundam",
+        "precio": 72000,
+        "stock": 3,
+        "description": "Gundam de la serie original en RG",
+        "categoria": "RG"
     }
 ]
