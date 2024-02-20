@@ -23,19 +23,19 @@ const Navbar = () => {
 
           <li>  
 
-            <NavLink to={'categoria/Consolas'}>HG</NavLink>
+            <NavLink to={'categoria/HG'}>HG</NavLink>
 
           </li>
 
           <li>  
 
-            <NavLink to={'categoria/Celulares'}>MG</NavLink>
+            <NavLink to={'categoria/MG'}>MG</NavLink>
 
           </li>
 
           <li>  
 
-            <NavLink to={'categoria/PC'}>RG</NavLink>
+            <NavLink to={'categoria/RG'}>RG</NavLink>
 
           </li>
 

@@ -12,6 +12,7 @@ const Item = ({producto}) => {
 
       <div key={producto.id} className='container'>
           <h2>{producto.nombre}</h2>
+          <img src={producto.img} alt={producto.nombre} />
       </div> 
 
     </Link>
