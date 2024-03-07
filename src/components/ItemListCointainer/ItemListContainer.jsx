@@ -32,8 +32,8 @@ const ItemListContainer = ({greeting}) => {
             return(
                 <div key={producto.id}>
                     <h2>{producto.nombre}</h2>
-                    <h2>{producto.precio}</h2>
-                    <h2>{producto.stock}</h2>
+                    <h2>Precio: ${producto.precio}</h2>
+                    <h2>Stock:{producto.stock}</h2>
                     <p>{producto.description}</p>
                 </div>
             )
