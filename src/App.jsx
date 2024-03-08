@@ -10,7 +10,7 @@ function App()  {
     <>
     <Contador/>
     <NavBar/>
-    <ItemListContainer greeting={estado}/>
+    <ItemListContainer greeting={"Bienvenidos a la tienda"}/>
     </>
   )
 }
