@@ -1,0 +1,39 @@
+[
+    {
+        "id": 1,
+        "nombre": "HG Gundam",
+        "precio": 40000,
+        "stock": 15,
+        "description": "Gundam de la serie original en HG",
+        "categoria": "HG",
+        "img": "/assets/img/HGGundam.jpg"
+    },
+    {
+        "id": 2,
+        "nombre": "HG Chars's Zaku II",
+        "precio": 46000,
+        "stock": 7,
+        "description": "El Zaku de Char de la serie original en HG",
+        "categoria": "HG",
+        "img": "/assets/img/HGZaku2Char.jpg"
+    },
+    {
+        "id": 3,
+        "nombre": "MG Gundam",
+        "precio": 120000,
+        "stock": 2,
+        "description": "Gundam de la serie original en MG",
+        "categoria": "MG",
+        "img": "/assets/img/MGGundam.jpg"
+
+    },
+    {
+        "id": 4,
+        "nombre": "RG Gundam",
+        "precio": 72000,
+        "stock": 3,
+        "description": "Gundam de la serie original en RG",
+        "categoria": "RG",
+        "img": "/assets/img/RGGundam.jpg"
+    }
+]
