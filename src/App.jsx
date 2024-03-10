@@ -1,38 +1,18 @@
-import React from 'react'
-import Navbar from './components/Navbar'
-import ItemListContainer from './components/ItemListContainer'
-import Footer from './components/Footer'
-import ItemDetailContainer from './components/ItemDetailContainer'
-import { BrowserRouter,Routes,Route } from 'react-router-dom'
-import NotFound from './components/NotFound'
+import React from "react"
+import "./App.css"
+import NavBar from "./components/NavBar/NavBar"
+import ItemListContainer from "./components/ItemListCointainer/ItemListContainer"
+import Contador from "./components/Contador/Contador"
 
-const App = () => {
+function App()  {
 
   return (
     <>
-
-    <BrowserRouter>
-
-      <Navbar/>
-
-      <Routes>
-
-        <Route path='/' element={<ItemListContainer/>}/>
-
-        <Route path='/categoria/:categoryId' element={<ItemListContainer/>}/>
-
-        <Route path='/detalle/:id' element={<ItemDetailContainer/>}/>
-
-        <Route path='*' element={<NotFound/>}/>
-        
-      </Routes>
-
-      <Footer/>
-      
-    </BrowserRouter>
-
+    <Contador/>
+    <NavBar/>
+    <ItemListContainer greeting={"Bienvenidos a la tienda"}/>
     </>
-  );
-};
+  )
+}
 
 export default App
