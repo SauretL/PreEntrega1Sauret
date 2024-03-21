@@ -25,7 +25,6 @@
         "description": "Gundam de la serie original en MG",
         "categoria": "MG",
         "img": "/assets/img/MGGundam.jpg"
-
     },
     {
         "id": 4,
@@ -35,5 +34,113 @@
         "description": "Gundam de la serie original en RG",
         "categoria": "RG",
         "img": "/assets/img/RGGundam.jpg"
+    },
+    {
+        "id": 5,
+        "nombre": "HG Strike Gundam",
+        "precio": 38000,
+        "stock": 8,
+        "description": "Gundam de la serie Gundam SEED en HG",
+        "categoria": "HG",
+        "img": "/assets/img/HGStrikeGundam.jpg"
+    },
+    {
+        "id": 6,
+        "nombre": "HG Freedom Gundam",
+        "precio": 42000,
+        "stock": 9,
+        "description": "Gundam de la serie Gundam SEED en HG",
+        "categoria": "HG",
+        "img": "/assets/img/HGFreedomGundam.jpg"
+    },
+    {
+        "id": 7,
+        "nombre": "HG Gouf",
+        "precio": 42000,
+        "stock": 5,
+        "description": "Gouf de la serie original en HG",
+        "categoria": "HG",
+        "img": "/assets/img/HGGouf.jpg"
+    },
+    {
+        "id": 8,
+        "nombre": "HG Gundam Exia Repair II",
+        "precio": 46000,
+        "stock": 5,
+        "description": "Gundam Exia Repair II de la serie Gundam 00 en HG",
+        "categoria": "HG",
+        "img": "/assets/img/HGGundamExiaRepairII.jpg"
+    },
+    {
+        "id": 9,
+        "nombre": "HG Astray Red Frame",
+        "precio": 48000,
+        "stock": 4,
+        "description": "Gundam de la serie Gundam SEED Astray en HG",
+        "categoria": "HG",
+        "img": "/assets/img/HGAstrayRedFrame.jpg"
+    },
+    {
+        "id": 10,
+        "nombre": "HG Gundam Barbatos Lupus Rex",
+        "precio": 45000,
+        "stock": 3,
+        "description": "Gundam de la serie Mobile Suit Gundam Iron-Blooded Orphans en HG",
+        "categoria": "HG",
+        "img": "/assets/img/HGGundamBarbatosLupusRex.jpg"
+    },
+    {
+        "id": 11,
+        "nombre": "RG Strike Freedom Gundam",
+        "precio": 80000,
+        "stock": 1,
+        "description": "Gundam de la serie Gundam SEED Destiny en RG",
+        "categoria": "RG",
+        "img": "/assets/img/RGStrikeFreedomGundam.jpg"
+    },
+    {
+        "id": 12,
+        "nombre": "RG Zeta Gundam",
+        "precio": 70000,
+        "stock": 2,
+        "description": "Gundam de la serie Mobile Suit Zeta Gundam en RG",
+        "categoria": "RG",
+        "img": "/assets/img/RGZetaGundam.jpg"
+    },
+    {
+        "id": 13,
+        "nombre": "MG Gundam Unicorn Ver. Ka",
+        "precio": 160000,
+        "stock": 1,
+        "description": "Gundam de la serie Mobile Suit Gundam Unicorn en MG, versión de Hajime Katoki",
+        "categoria": "MG",
+        "img": "/assets/img/MGGundamUnicornVerKa.jpg"
+    },
+    {
+        "id": 14,
+        "nombre": "MG Wing Gundam Zero Ver. EW",
+        "precio": 130000,
+        "stock": 2,
+        "description": "Gundam de la serie Mobile Suit Gundam Wing en MG, versión Endless Waltz",
+        "categoria": "MG",
+        "img": "/assets/img/MGWingGundamZeroEW.jpg"
+    },
+    {
+        "id": 15,
+        "nombre": "HG Gyan",
+        "precio": 50000,
+        "stock": 4,
+        "description": "Gyan de la serie original en HG",
+        "categoria": "HG",
+        "img": "/assets/img/HGGyan.jpg"
+    },
+    {
+        "id": 16,
+        "nombre": "HG Gundam Aerial",
+        "precio": 42000,
+        "stock": 4,
+        "description": "Gundam de la serie Gundam The Witch from Mercury en HG",
+        "categoria": "HG",
+        "img": "/assets/img/HGGundamAerial.jpg"
     }
 ]

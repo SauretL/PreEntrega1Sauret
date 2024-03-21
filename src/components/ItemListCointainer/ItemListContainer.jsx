@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react"
+import "./ItemListContainer.css"
 
 const ItemListContainer = ({ greeting }) => {
 
@@ -21,27 +22,28 @@ const ItemListContainer = ({ greeting }) => {
     }, [])
 
     return (
-        <>
+        <div className="item-list-container">
             <h2>{greeting}</h2>
+            <div className="item-grid">
+                {productos.length == 0
+                    ?
+                    <h1>CARGANDO...</h1>
+                    :
+                    productos.map((producto) => {
+                        return (
 
-            {productos.length == 0
-                ?
-                <h1>CARGANDO...</h1>
-                :
-                productos.map((producto) => {
-                    return (
-
-                        <div key={producto.id}>
-                            <h2>{producto.nombre}</h2>
-                            <h2>Precio: ${producto.precio}</h2>
-                            <h2>Stock:{producto.stock}</h2>
-                            <p>{producto.description}</p>
-                            <img src={producto.img} alt={producto.nombre}></img>
-                        </div>
-                    )
-                })
-            }
-        </>
+                            <div key={producto.id} className="item-box">
+                                <h2>{producto.nombre}</h2>
+                                <h2>Precio: ${producto.precio}</h2>
+                                <h2>Stock:{producto.stock}</h2>
+                                <p>{producto.description}</p>
+                                <img src={producto.img} alt={producto.nombre}></img>
+                            </div>
+                        )
+                    })
+                }
+            </div>
+        </div>
 
     )
 }

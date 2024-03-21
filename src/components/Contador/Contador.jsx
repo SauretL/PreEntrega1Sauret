@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react"
+import "./Contador.css"
 
-const Contador = () => {
+const Contador = ({ initial, stock }) => {
   const [contador, setContador] = useState(1)
 
 
@@ -11,13 +12,13 @@ const Contador = () => {
   )
 
   const incrementar = () => {
-    if (contador < 10) {
+    if (contador < stock) {
       setContador(contador + 1)
     }
   }
 
   const decrementar = () => {
-    if (contador > 1) {
+    if (contador > initial) {
       setContador(contador - 1)
     }
   }
@@ -35,18 +36,20 @@ const Contador = () => {
 
   const almacenarRef = () => {
     contadorRef.current = contador
-    alert ("Valor almacenado en ref: "+ contadorRef.current)
+    alert("Valor almacenado en ref: " + contadorRef.current)
   }
 
 
   return (
-    <>
-      <h3>Elementos en carrito={contador}</h3>
-      <button onClick={incrementar}>+</button>
-      <button onClick={agregarCarrito}>Agregar al carrito</button>
-      <button onClick={decrementar}>-</button>
-      <button onClick={almacenarRef}>Almacenar contador</button>
-    </>
+    <div className="contador-container">
+      <h3 className="contador-h3">Elementos en carrito={contador}</h3>
+      <div className="contador-buttons">
+        <button onClick={decrementar}>-</button>
+        <button onClick={agregarCarrito}>Agregar al carrito</button>
+        <button onClick={incrementar}>+</button>
+        <button onClick={almacenarRef}>Almacenar contador</button>
+      </div>
+    </div>
   )
 
 }

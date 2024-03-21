@@ -1,0 +1,42 @@
+.contador-container {
+    width: 200px;
+    margin: 20px auto;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px black;
+    text-align: center;
+    background-color: white;
+  }
+  
+  .contador-h3 {
+    font-size: 1;
+    margin-bottom: 10px;
+  }
+  
+  .contador-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .contador-buttons button {
+    padding: 5px 10px;
+    margin: 0 3px;
+    font-size: 0.8rem;
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .contador-buttons button:hover {
+    background-color: grey;
+  }
+  
+  .contador-buttons button:disabled {
+    background-color: whitesmoke;
+    cursor: not-allowed;
+  }
