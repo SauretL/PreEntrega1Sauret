@@ -3,18 +3,34 @@ import "./App.css"
 import NavBar from "./components/NavBar/NavBar"
 import ItemListContainer from "./components/ItemListCointainer/ItemListContainer"
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer"
+import { BrowserRouter, Routes, Route } from "react-router-dom"
+import Error from "./components/Error/Error"
+import Inicio from "./components/Inicio/Inicio"
+import AboutUs from "./components/AboutUs/AboutUs"
+import Contacto from "./components/Contacto/Contacto"
 
 function App() {
 
   return (
     <>
-      <NavBar />
-      <ItemListContainer greeting={"Bienvenidos a la tienda"} />
-      <ItemDetailContainer id={2}/>
+      <BrowserRouter>
+        <NavBar />
+
+        <Routes>
+          <Route path="/" element= {<Inicio greeting="Bienvenidos a la tienda"/>} />
+          <Route path="productos" element={<ItemListContainer greeting={"Observen nuestro catalogo de productos"} />} />
+          <Route path="/categoria/:categoryId" element={<ItemListContainer greeting={"Observen nuestro catalogo de productos"} />} />
+          <Route path="/detail/:id" element={<ItemDetailContainer/>} />
+          <Route path="about-us" element={<AboutUs/>} />
+          <Route path="contacto" element={<Contacto/>} />
+          <Route path="*" element={<Error/>} />
+        </Routes>
+
+      </BrowserRouter>
     </>
   )
 }
 
 export default App
 
-// CLASE 9 MINUTO 23
+// CLASE 9 MINUTO 02:09
