@@ -3,7 +3,7 @@ import "./ItemListContainer.css"
 import { Link, useParams } from "react-router-dom"
 import { collection, getDocs, getFirestore, query, where } from "firebase/firestore"
 
-const ItemListContainer = ({ greeting }) => {
+const ItemListContainer = () => {
 
     const [productos, setProductos] = useState([])
 
@@ -32,7 +32,7 @@ const ItemListContainer = ({ greeting }) => {
 
     return (
         <div className="item-list-container">
-            <h2>{greeting}</h2>
+            <h2>Observen nuestro catalogo de productos</h2>
             <div className="item-grid">
                 {productos.length == 0
                     ?

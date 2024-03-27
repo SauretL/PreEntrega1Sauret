@@ -10,6 +10,7 @@ import AboutUs from "./components/AboutUs/AboutUs"
 import Contacto from "./components/Contacto/Contacto"
 import Cart from "./components/Cart/Cart"
 import CartProvider from "./context/CartContext"
+import Checkout from "./components/Checkout/Checkout"
 
 function App() {
 
@@ -22,13 +23,14 @@ function App() {
           <NavBar />
 
           <Routes>
-            <Route path="/" element={<Inicio greeting="Bienvenidos a la tienda" />} />
-            <Route path="productos" element={<ItemListContainer greeting={"Observen nuestro catalogo de productos"} />} />
+            <Route path="/" element={<Inicio/>} />
+            <Route path="productos" element={<ItemListContainer/>} />
             <Route path="/categoria/:categoryId" element={<ItemListContainer greeting={"Observen nuestro catalogo de productos"} />} />
             <Route path="/detail/:id" element={<ItemDetailContainer />} />
             <Route path="about-us" element={<AboutUs />} />
             <Route path="contacto" element={<Contacto />} />
             <Route path="/carrito" element={<Cart />} />
+            <Route path="/checkout" element={<Checkout/>} />
             <Route path="*" element={<Error />} />
           </Routes>
 
@@ -42,5 +44,3 @@ function App() {
 export default App
 
 
-/* HORA 01:48 FIREBASE 1 COLECCION*/
-/* HORA 01:51 FIREBASE 1 COLECCION FILTRADA*/

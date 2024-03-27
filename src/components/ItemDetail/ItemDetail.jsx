@@ -28,7 +28,9 @@ const ItemDetail = ({ producto }) => {
             <p>{producto.description}</p>
             <img src={producto.img} alt={producto.nombre}></img>
 
-            {cart ? <Link to= {"/carrito"} >Ir al carrito</Link> : <Contador initial={1} stock={producto.stock} onAdd={onAdd} />}
+            {producto.stock == 0 ? <h2>NO HAY STOCK</h2> : (
+                cart ? <Link to={"/carrito"}>Ir al carrito</Link> : <Contador initial={1} stock={producto.stock} onAdd={onAdd}/>
+            )}
 
 
         </div>

@@ -1,33 +1,38 @@
 import React, { useState, useEffect } from "react"
 import "./Inicio.css"
 import { Link } from "react-router-dom"
+import { collection, getDocs, getFirestore} from "firebase/firestore"
 
-const Inicio = ({ greeting }) => {
+const Inicio = () => {
     const [productos, setProductos] = useState([])
 
     useEffect(() => {
-        const fetchData = async () => {
+        const fetchProductos = async () => {
+            const db = getFirestore()
             try {
-                const response = await fetch("./productos.json")
-                const data = await response.json()
-                const randomProductos = getRandomProducts(data, 3)
-                setProductos(randomProductos);
+                const querySnapshot = await getDocs(collection(db, "gunplas"))
+                const allProducts = querySnapshot.docs.map((doc) => ({
+                    id: doc.id,
+                    ...doc.data()
+                }))
+                const randomProducts = getRandomProducts(allProducts, 3)
+                setProductos(randomProducts);
             } catch (error) {
-                console.log("Error en el fetch " + error)
+                console.error("Error al obtener los productos:", error)
             }
-        };
+        }
 
-        fetchData()
-    }, []);
+        fetchProductos()
+    }, [])
 
     const getRandomProducts = (array, count) => {
         const shuffled = array.sort(() => 0.5 - Math.random())
-        return shuffled.slice(0, count)
-    };
+        return shuffled.slice(0, count);
+    }
 
     return (
         <div className="inicio-list-container">
-            <h2>{greeting}</h2>
+            <h2>Bienvenidos a nuestra tienda</h2>
             <div className="inicio-grid">
                 {productos.length === 0 ? (
                     <h1>CARGANDO...</h1>

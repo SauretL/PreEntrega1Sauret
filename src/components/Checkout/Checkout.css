@@ -1,0 +1,44 @@
+.checkout-container {
+    margin: 20px;
+}
+
+.items-container {
+    margin-bottom: 20px;
+}
+
+.item {
+    margin-bottom: 10px;
+}
+
+.total {
+    font-weight: bold;
+}
+
+.form-container {
+    margin-top: 20px;
+}
+
+.form-field {
+    margin-bottom: 10px;
+}
+
+.submit-button {
+    background-color: grey;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.submit-button:hover {
+    background-color: blue;
+}
+
+.error-message {
+    color: red;
+}
+
+.success-message {
+    color: green;
+}

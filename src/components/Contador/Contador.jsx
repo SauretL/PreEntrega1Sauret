@@ -24,7 +24,7 @@ const Contador = ({ initial, stock, onAdd }) => {
   }
 
   const agregarCarrito = () => {
-    if (contador > 1) {
+    if (contador > 0) {
       onAdd(contador)
     }
     else {
