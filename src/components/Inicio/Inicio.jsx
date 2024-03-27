@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
 import "./Inicio.css"
 import { Link } from "react-router-dom"
-import { collection, getDocs, getFirestore} from "firebase/firestore"
+import { collection, getDocs, getFirestore } from "firebase/firestore"
 
 const Inicio = () => {
     const [productos, setProductos] = useState([])
@@ -33,20 +33,21 @@ const Inicio = () => {
     return (
         <div className="inicio-list-container">
             <h2>Bienvenidos a nuestra tienda</h2>
+            <p>¡Vendemos los mejores modelos de plastico para aficionados de la franquicia de Gundam!</p>
             <div className="inicio-grid">
                 {productos.length === 0 ? (
                     <h1>CARGANDO...</h1>
                 ) : (
                     productos.map((producto) => {
                         return (
-                            <Link to={`/detail/${producto.id}`} >
-                            <div key={producto.id} className="inicio-box">
-                                <h2>{producto.nombre}</h2>
-                                <h2>Precio: ${producto.precio}</h2>
-                                <h2>Stock: {producto.stock}</h2>
-                                <p>{producto.description}</p>
-                                <img src={producto.img} alt={producto.nombre}></img>
-                            </div>
+                            <Link to={`/detail/${producto.id}`} key={producto.id} >
+                                <div className="inicio-box">
+                                    <h2>{producto.nombre}</h2>
+                                    <h2>Precio: ${producto.precio}</h2>
+                                    <h2>Stock: {producto.stock}</h2>
+                                    <p>{producto.description}</p>
+                                    <img src={producto.img} alt={producto.nombre}></img>
+                                </div>
                             </Link>
 
                         )

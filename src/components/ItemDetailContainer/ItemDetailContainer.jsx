@@ -1,7 +1,8 @@
-import React, { useState, useEffect, useContext } from 'react'
+import React, { useState, useEffect, } from 'react'
 import ItemDetail from '../ItemDetail/ItemDetail'
 import { useParams } from 'react-router-dom'
-import { doc, getDoc, getFirestore, } from "firebase/firestore"
+import { doc, getDoc, } from "firebase/firestore"
+import { db } from '../../firebase/config'
 
 
 const ItemDetailContainer = () => {
@@ -11,8 +12,6 @@ const ItemDetailContainer = () => {
     const { id } = useParams()
 
     useEffect(() => {
-
-        const db = getFirestore()
 
         const nuevoDoc = doc(db, "gunplas", id)
         getDoc(nuevoDoc)

@@ -18,7 +18,6 @@ const ItemDetail = ({ producto }) => {
 
         agregarCarrito(producto, contador)
 
-        alert("Agregaste " + contador + " productos al carrito")
     }
     return (
         <div className="item-box-detail">

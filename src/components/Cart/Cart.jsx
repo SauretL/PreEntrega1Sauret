@@ -16,7 +16,7 @@ const Cart = () => {
                 <>
                     <h2 className="cart-title">Lista de carrito</h2>
                     {cart.map((p) => (
-                        <CartItem key={p.id} producto={p} eliminarProducto={eliminarProducto} />
+                        <CartItem key={p.producto.id} producto={p} eliminarProducto={eliminarProducto} />
                     ))}
                     <p className="cart-total">Precio total: ${totalCarrito()}</p>
                     <div className="cart-buttons">

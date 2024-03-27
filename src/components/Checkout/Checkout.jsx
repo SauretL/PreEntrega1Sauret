@@ -1,7 +1,8 @@
 import React, { useState, useContext } from 'react'
-import { collection, addDoc, updateDoc, doc, getDoc, getFirestore } from 'firebase/firestore'
+import { collection, addDoc, updateDoc, doc, getDoc } from 'firebase/firestore'
 import { CartContext } from '../../context/CartContext'
 import "./Checkout.css"
+import { db } from '../../firebase/config'
 
 const Checkout = () => {
     const { cart, totalCarrito, vaciarCarrito } = useContext(CartContext)
@@ -14,20 +15,22 @@ const Checkout = () => {
     const [error, setError] = useState('')
     const [ordenId, setOrdenId] = useState('')
 
+    const formatearNombre = (input) => {
+        return input.trim().toLowerCase().replace(/\b\w/g, (char) => char.toUpperCase())
+    }
+
     const manejadorFormulario = async (event) => {
         event.preventDefault();
 
         if (!nombre || !apellido || !telefono || !email || !emailConfirmacion) {
             setError('Por favor, completa los campos requeridos')
-            return
+            return;
         }
 
         if (email !== emailConfirmacion) {
-            setError('Los campos del mail no coinciden')
+            setError('Los mails no coinciden')
             return
         }
-
-        const db = getFirestore()
 
         const orden = {
             items: cart.map((producto) => ({
@@ -37,8 +40,8 @@ const Checkout = () => {
             })),
             total: totalCarrito(),
             fecha: new Date(),
-            nombre,
-            apellido,
+            nombre: formatearNombre(nombre),
+            apellido: formatearNombre(apellido),
             telefono,
             email
         };
@@ -52,9 +55,9 @@ const Checkout = () => {
 
                     await updateDoc(productoRef, {
                         stock: stockActual - productoOrden.cantidad
-                    });
+                    })
                 })
-            );
+            )
 
             const docRef = await addDoc(collection(db, 'ordenes'), orden)
             setError('')
@@ -64,7 +67,12 @@ const Checkout = () => {
             console.log(error)
             setError('Se produjo un error al crear la orden')
         }
-    };
+    }
+
+    const handleTelefonoChange = (event) => {
+        const value = event.target.value.replace(/\D/g, '')
+        setTelefono(value);
+    }
 
     return (
         <div className="checkout-container">
@@ -93,7 +101,7 @@ const Checkout = () => {
                 </div>
                 <div className="form-field">
                     <label htmlFor="telefono">Teléfono</label>
-                    <input type="text" id="telefono" value={telefono} onChange={(e) => setTelefono(e.target.value)} />
+                    <input type="text" id="telefono" value={telefono} onChange={handleTelefonoChange} />
                 </div>
                 <div className="form-field">
                     <label htmlFor="email">Email</label>
@@ -110,10 +118,10 @@ const Checkout = () => {
                 </div>
                 <button type="submit" className="submit-button">Completar compra</button>
                 {error && <p className="error-message">{error}</p>}
-                {ordenId && <p className="success-message">¡Gracias por tu compra! Tu número de orden es: {ordenId}</p>}
+                {ordenId && <p className="success-message">¡Gracias por tu compra! Tu número de orden es el siguiente: {ordenId}</p>}
             </form>
         </div>
-    );
-};
+    )
+}
 
 export default Checkout
