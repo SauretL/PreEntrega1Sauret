@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react"
 import "./ItemListContainer.css"
 import { Link, useParams } from "react-router-dom"
+import { collection, getDocs, getFirestore, query, where } from "firebase/firestore"
 
 const ItemListContainer = ({ greeting }) => {
 
@@ -9,23 +10,23 @@ const ItemListContainer = ({ greeting }) => {
     const { categoryId } = useParams()
 
     useEffect(() => {
+        const db = getFirestore()
 
-        const fetchData = async () => {
-            try {
-                const response = await fetch("/productos.json")
-                const data = await response.json()
-                if (categoryId) {
-                    const filtroproducts = data.filter((p) => p.categoria == categoryId)
-                    setProductos(filtroproducts)
-                } else {
-                    setProductos(data)
-                }
-            } catch (error) {
-                console.log("Error en el fetch " + error)
-            }
-        }
+        const misProductos = categoryId ?
+            query(collection(db, "gunplas"), where("categoria", "==", categoryId))
+            :
+            collection(db, "gunplas")
 
-        fetchData()
+        getDocs(misProductos)
+            .then(res => {
+                const nuevosProductos = res.docs.map((doc) => {
+                    const data = doc.data()
+                    return { id: doc.id, ...data }
+
+                })
+                setProductos(nuevosProductos)
+            })
+            .catch((error) => console.log(error) )
 
     }, [categoryId])
 

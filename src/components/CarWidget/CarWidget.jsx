@@ -8,7 +8,7 @@ const CarWidget = () => {
     return (
         <div className="cartContainer">
             <img src="../../../public/assets/img/carrito.png" alt="carrito" className="cart"></img>
-            <p className="cartNumber"> {cantidadCarrito == 0 ? null : cantidadCarrito} </p>
+            <p className="cartNumber"> {cantidadCarrito() == 0 ? null : cantidadCarrito()} </p>
         </div>
     )
 }

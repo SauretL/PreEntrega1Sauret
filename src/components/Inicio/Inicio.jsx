@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react"
 import "./Inicio.css"
+import { Link } from "react-router-dom"
 
 const Inicio = ({ greeting }) => {
     const [productos, setProductos] = useState([])
@@ -33,15 +34,16 @@ const Inicio = ({ greeting }) => {
                 ) : (
                     productos.map((producto) => {
                         return (
-                            <>
-                                <div key={producto.id} className="inicio-box">
-                                    <h2>{producto.nombre}</h2>
-                                    <h2>Precio: ${producto.precio}</h2>
-                                    <h2>Stock: {producto.stock}</h2>
-                                    <p>{producto.description}</p>
-                                    <img src={producto.img} alt={producto.nombre}></img>
-                                </div>
-                            </>
+                            <Link to={`/detail/${producto.id}`} >
+                            <div key={producto.id} className="inicio-box">
+                                <h2>{producto.nombre}</h2>
+                                <h2>Precio: ${producto.precio}</h2>
+                                <h2>Stock: {producto.stock}</h2>
+                                <p>{producto.description}</p>
+                                <img src={producto.img} alt={producto.nombre}></img>
+                            </div>
+                            </Link>
+
                         )
                     })
                 )}

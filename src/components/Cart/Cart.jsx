@@ -19,8 +19,9 @@ const Cart = () => {
                     {cart.map((p) => (
                         <CartItem key={p.id} producto = {p} eliminarProducto={eliminarProducto}/>
                     ))}
-                    <p>Total en carrito: {totalCarrito}</p>
+                    <p>Precio total: ${totalCarrito()}</p>
                     <button onClick={vaciarCarrito} >Vaciar carrito</button>
+                    <button onClick={vaciarCarrito} >Comprar todo</button>
                 </>
             )}
         </div>

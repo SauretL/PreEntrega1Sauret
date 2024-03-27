@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useContext } from 'react'
 import ItemDetail from '../ItemDetail/ItemDetail'
 import { useParams } from 'react-router-dom'
+import { doc, getDoc, getFirestore, } from "firebase/firestore"
+
 
 const ItemDetailContainer = () => {
 
@@ -10,20 +12,19 @@ const ItemDetailContainer = () => {
 
     useEffect(() => {
 
-        const fetchData = async () => {
-            try {
-                const response = await fetch("/productos.json")
-                const data = await response.json()
-                const product = data.find((p) => p.id == id)
-                setProducto(product)
-            } catch (error) {
-                alert("Error en el fetch " + error)
-            }
-        }
+        const db = getFirestore()
 
-        fetchData()
+        const nuevoDoc = doc(db, "gunplas", id)
+        getDoc(nuevoDoc)
+            .then(res => {
+                const data = res.data()
+                const nuevoProducto = { id: res.id, ...data }
+                setProducto(nuevoProducto)
+            })
+            .catch((error) => console.log(error))
 
-    }, [id])
+
+    }, [])
 
     return (
         <><ItemDetail producto={producto} /></>
