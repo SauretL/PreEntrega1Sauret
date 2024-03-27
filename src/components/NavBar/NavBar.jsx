@@ -1,15 +1,15 @@
 import React from "react"
 import CarWidget from "../CarWidget/CarWidget"
-import {NavLink} from "react-router-dom"
+import { NavLink } from "react-router-dom"
 import "./NavBar.css"
 
 const NavBar = () => {
 
     return (
         <>
-        <h1>GunplArg Hobby Store</h1>
+            <h1>GunplArg Hobby Store</h1>
             <nav>
-                <ul>
+                <ul> <li><NavLink to={"/"} ><img src="../../../public/assets/img/logo.jpeg" alt="logo" className="logo"></img> </NavLink></li>
                     <li><NavLink to={"/"} >Inicio</NavLink></li>
                     <li><NavLink to={"productos"} >Todos los productos</NavLink></li>
                     <li><NavLink to={"/categoria/hg"} >High Grades</NavLink></li>
@@ -19,7 +19,7 @@ const NavBar = () => {
                     <li><NavLink to={"contacto"}>Contacto</NavLink></li>
                 </ul>
             </nav>
-            <CarWidget/>
+            <CarWidget />
         </>
     )
 }

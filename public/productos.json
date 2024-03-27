@@ -1,7 +1,7 @@
 [
     {
         "id": 1,
-        "nombre": "HG Gundam",
+        "nombre": "HG Gundam RX-78-2",
         "precio": 40000,
         "stock": 15,
         "description": "Gundam de la serie original en HG",
@@ -19,7 +19,7 @@
     },
     {
         "id": 3,
-        "nombre": "MG Gundam",
+        "nombre": "MG Gundam RX-78-2",
         "precio": 120000,
         "stock": 2,
         "description": "Gundam de la serie original en MG",
@@ -28,7 +28,7 @@
     },
     {
         "id": 4,
-        "nombre": "RG Gundam",
+        "nombre": "RG Gundam RX-78-2",
         "precio": 72000,
         "stock": 3,
         "description": "Gundam de la serie original en RG",

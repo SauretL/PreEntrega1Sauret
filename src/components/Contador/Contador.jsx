@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react"
 import "./Contador.css"
 
-const Contador = ({ initial, stock }) => {
+const Contador = ({ initial, stock, onAdd }) => {
   const [contador, setContador] = useState(1)
 
 
@@ -25,7 +25,7 @@ const Contador = ({ initial, stock }) => {
 
   const agregarCarrito = () => {
     if (contador > 1) {
-      alert("Agregaste " + contador + " productos al carrito")
+      onAdd(contador)
     }
     else {
       alert("Agregaste un producto al carrito")
