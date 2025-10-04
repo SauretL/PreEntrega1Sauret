@@ -1,31 +1,87 @@
 .cart-title {
-    font-size: 24px; 
-    margin-bottom: 20px; 
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #333;
+    font-weight: 700;
+    text-align: center;
+    border-bottom: 3px solid cadetblue;
+    padding-bottom: 0.5rem;
+    display: inline-block;
 }
 
 .cart-message {
-    font-size: 18px; 
+    font-size: 1.2rem;
+    color: #666;
+    text-align: center;
+    padding: 3rem 2rem;
+    background-color: #fafafa;
+    border-radius: 12px;
+    border: 2px dashed #e0e0e0;
+    margin: 2rem 0;
 }
 
 .cart-total {
-    font-size: 20px; 
-    margin-top: 20px; 
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e0e0e0;
+    text-align: center;
+    font-weight: 700;
+    color: cadetblue;
 }
 
 .cart-buttons {
-    margin-top: 20px; 
+    margin-top: 2rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .cart-buttons button {
-    margin-right: 10px; 
-    color: grey; 
-    padding: 10px 20px; 
-    border: none; 
-    cursor: pointer; 
-    text-decoration: none; 
+    padding: 12px 2rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    min-width: 140px;
 }
 
 .cart-buttons button:hover {
-    background-color: cyan; 
+    background-color: cyan;
     color: white;
+}
+
+@media (max-width: 768px) {
+    .cart-title {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .cart-total {
+        font-size: 1.25rem;
+        padding: 1rem;
+    }
+
+    .cart-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cart-buttons button {
+        width: 100%;
+        max-width: 280px;
+        margin-right: 0;
+    }
+
+    .cart-message {
+        padding: 2rem 1rem;
+        font-size: 1.1rem;
+    }
 }

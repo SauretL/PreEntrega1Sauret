@@ -1,42 +1,57 @@
 .contador-container {
-    width: 200px;
-    margin: 20px auto;
-    padding: 10px;
-    border-radius: 8px;
-    box-shadow: 0px 0px 10px black;
-    text-align: center;
-    background-color: white;
-  }
-  
-  .contador-h3 {
-    font-size: 1;
-    margin-bottom: 10px;
-  }
-  
-  .contador-buttons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 10px;
-  }
-  
-  .contador-buttons button {
-    padding: 5px 10px;
-    margin: 0 3px;
-    font-size: 0.8rem;
-    background-color: blue;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .contador-buttons button:hover {
-    background-color: grey;
-  }
-  
-  .contador-buttons button:disabled {
-    background-color: whitesmoke;
-    cursor: not-allowed;
-  }
+  width: 200px;
+  margin: 20px auto;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  background-color: white;
+}
+
+.contador-container:hover {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
+}
+
+.contador-h3 {
+  font-size: 1, 1rem;
+  margin-bottom: 10px;
+}
+
+.contador-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.contador-buttons button {
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  background-color: cadetblue;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: 500;
+  min-width: 40px;
+}
+
+.contador-buttons button:hover:not(:disabled) {
+  background-color: #5f9ea0;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.contador-buttons button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.contador-buttons button:disabled {
+  background-color: #cccccc;
+  color: #666;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
